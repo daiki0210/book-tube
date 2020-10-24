@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'routes/home_route.dart';
 import 'routes/ranking_route.dart';
 import 'routes/search_route.dart';
+import 'routes/search_route.dart';
 import 'routes/video_route.dart';
 import 'routes/my-page_route.dart';
 
@@ -20,27 +21,21 @@ class _RootWidgetState extends State<RootWidget> {
   // アイコン情報
   static const _footerIcons = [
     Icons.home,
-    Icons.star_half,
     Icons.search,
-    Icons.video_library,
-    Icons.account_circle,
+    Icons.star_half,
   ];
 
   // アイコン文字列
   static const _footerItemNames = [
     'ホーム',
+    '本で絞る',
     'チャンネル',
-    '検索',
-    '動画',
-    'マイページ',
   ];
 
   var _routes = [
     Home(),
-    YoutubeChannel(),
     Search(),
-    Video(),
-    Mypage(),
+    YoutubeChannel(),
   ];
 
   @override
@@ -52,7 +47,7 @@ class _RootWidgetState extends State<RootWidget> {
     }
   }
 
-  /// インデックスのアイテムをアクティベートする
+  // インデックスのアイテムをアクティベートする
   BottomNavigationBarItem _UpdateActiveState(int index) {
     return BottomNavigationBarItem(
         icon: Icon(
