@@ -32,7 +32,6 @@
 /build/
 /ios/
 lib/components/movie/utilities/keys.dart
-pubspec.lock
 
 # Web related
 lib/generated_plugin_registrant.dart

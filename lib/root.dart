@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'routes/home_route.dart';
 import 'routes/ranking_route.dart';
 import 'routes/search_route.dart';
@@ -30,7 +29,7 @@ class _RootWidgetState extends State<RootWidget> {
   // アイコン文字列
   static const _footerItemNames = [
     'ホーム',
-    'ランキング',
+    'チャンネル',
     '検索',
     '動画',
     'マイページ',
@@ -38,7 +37,7 @@ class _RootWidgetState extends State<RootWidget> {
 
   var _routes = [
     Home(),
-    Ranking(),
+    YoutubeChannel(),
     Search(),
     Video(),
     Mypage(),

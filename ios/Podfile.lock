@@ -31,6 +31,8 @@ PODS:
     - nanopb (~> 1.30906.0)
   - FirebaseCoreDiagnosticsInterop (1.2.0)
   - Flutter (1.0.0)
+  - flutter_inappwebview (0.0.1):
+    - Flutter
   - GoogleDataTransport (7.5.1):
     - nanopb (~> 1.30906.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
@@ -62,6 +64,7 @@ DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
 SPEC REPOS:
@@ -85,6 +88,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  flutter_inappwebview:
+    :path: ".symlinks/plugins/flutter_inappwebview/ios"
   url_launcher:
     :path: ".symlinks/plugins/url_launcher/ios"
 
@@ -98,6 +103,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_inappwebview: 69dfbac46157b336ffbec19ca6dfd4638c7bf189
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
