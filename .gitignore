@@ -31,6 +31,7 @@
 .pub/
 /build/
 /ios/
+lib/components/movie/utilities/keys.dart
 
 # Web related
 lib/generated_plugin_registrant.dart
