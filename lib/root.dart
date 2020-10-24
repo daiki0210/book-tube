@@ -21,7 +21,7 @@ class _RootWidgetState extends State<RootWidget> {
   // アイコン情報
   static const _footerIcons = [
     Icons.home,
-    Icons.military_tech,
+    Icons.star_half,
     Icons.search,
     Icons.video_library,
     Icons.account_circle,
