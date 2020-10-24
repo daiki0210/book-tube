@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "200959282504",
+    "firebase_url": "https://book-summerizer.firebaseio.com",
+    "project_id": "book-summerizer",
+    "storage_bucket": "book-summerizer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200959282504:android:8435572a76018c4fce777d",
+        "android_client_info": {
+          "package_name": "com.mdk.book_summarizer_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200959282504-80uln1hh5pta6fo70b0miesf99v9ndut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgpVLfc1J_aVhnFbzejpAkVTRnZunaOPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200959282504-80uln1hh5pta6fo70b0miesf99v9ndut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
