@@ -1,11 +1,8 @@
+import 'package:book_summarizer_app/routes/channel_home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'routes/home_route.dart';
-import 'routes/ranking_route.dart';
 import 'routes/search_route.dart';
-import 'routes/search_route.dart';
-import 'routes/video_route.dart';
-import 'routes/my-page_route.dart';
 
 class RootWidget extends StatefulWidget {
   RootWidget({Key key}) : super(key: key);
@@ -35,7 +32,7 @@ class _RootWidgetState extends State<RootWidget> {
   var _routes = [
     Home(),
     Search(),
-    YoutubeChannel(),
+    ChannelHome(),
   ];
 
   @override

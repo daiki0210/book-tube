@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:book_summarizer_app/main.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({Key key}) : super(key: key);

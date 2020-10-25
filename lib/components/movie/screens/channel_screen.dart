@@ -3,14 +3,13 @@ import 'package:book_summarizer_app/components/movie/models/channel_model.dart';
 import 'package:book_summarizer_app/components/movie/models/video_model.dart';
 import 'package:book_summarizer_app/components/movie/screens/video_screen.dart';
 import 'package:book_summarizer_app/components/movie/services/api_service.dart';
-import 'package:flutter/cupertino.dart';
 
-class YoutubeChannel extends StatefulWidget {
+class ChannelScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _ChannelScreen createState() => _ChannelScreen();
 }
 
-class _HomeScreenState extends State<YoutubeChannel> {
+class _ChannelScreen extends State<ChannelScreen> {
   Channel _channel;
   bool _isLoading = false;
 
