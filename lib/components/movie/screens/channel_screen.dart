@@ -6,27 +6,20 @@ import 'package:book_summarizer_app/components/movie/services/api_service.dart';
 
 class ChannelScreen extends StatefulWidget {
   @override
-  _ChannelScreen createState() => _ChannelScreen();
+  final Channel _channel;
+
+  ChannelScreen(this._channel){}
+  _ChannelScreen createState() => _ChannelScreen(_channel);
 }
 
 class _ChannelScreen extends State<ChannelScreen> {
   Channel _channel;
   bool _isLoading = false;
 
+  _ChannelScreen(_channel){
+    this._channel = _channel;
+  }
   @override
-  void initState() {
-    super.initState();
-    _initChannel();
-  }
-
-  _initChannel() async {
-    Channel channel = await APIService.instance
-        .fetchChannel(channelId: 'UCEixleMT76xDzoiEb9ZA7XA');
-    setState(() {
-      _channel = channel;
-    });
-  }
-
   _buildProfileInfo() {
     return Container(
       margin: EdgeInsets.all(20.0),
