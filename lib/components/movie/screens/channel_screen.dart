@@ -153,7 +153,6 @@ class _ChannelScreen extends State<ChannelScreen> {
               return _buildProfileInfo();
             }
             Video video = _channel.videos[index - 1];
-            print(video.title);
             return _buildVideo(video);
           },
         ),
