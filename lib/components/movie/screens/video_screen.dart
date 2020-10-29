@@ -30,23 +30,23 @@ class _VideoScreenState extends State<VideoScreen> {
   bool _muted = false;
   bool _isPlayerReady = false;
 
-  final List<String> _ids = [
-    'lBN-vIP-dVU',
-    'ueY7y6TYBbs',
-    'IT6zNKLrT0Q',
-    '3b73xVBc',
-    '3b73xVBc',
-    '3b73xVBc',
-    '3b73xVBc',
-    '3b73xVBc',
-    '3b73xVBc',
-  ];
+  // final List<String> _ids = [
+  //   'lBN-vIP-dVU',
+  //   'ueY7y6TYBbs',
+  //   'IT6zNKLrT0Q',
+  //   '3b73xVBc',
+  //   '3b73xVBc',
+  //   '3b73xVBc',
+  //   '3b73xVBc',
+  //   '3b73xVBc',
+  //   '3b73xVBc',
+  // ];
 
   @override
   void initState() {
     super.initState();
     _controller = YoutubePlayerController(
-      initialVideoId: _ids.first,
+      initialVideoId: widget.id,
       flags: const YoutubePlayerFlags(
         mute: false,
         autoPlay: true,
@@ -102,6 +102,16 @@ class _VideoScreenState extends State<VideoScreen> {
         progressIndicatorColor: Colors.blueAccent,
         topActions: <Widget>[
           const SizedBox(width: 8.0),
+          IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+              size: 25.0,
+            ),
+              onPressed: () {
+                Navigator.pop(context);
+              }
+          ),
           Expanded(
             child: Text(
               _controller.metadata.title,
@@ -127,20 +137,14 @@ class _VideoScreenState extends State<VideoScreen> {
         onReady: () {
           _isPlayerReady = true;
         },
-        onEnded: (data) {
-          _controller
-              .load(_ids[(_ids.indexOf(data.videoId) + 1) % _ids.length]);
-          _showSnackBar('Next Video Started!');
-        },
+        // onEnded: (data) {
+        //   _controller
+        //       .load(_ids[(_ids.indexOf(data.videoId) + 1) % _ids.length]);
+        //   _showSnackBar('Next Video Started!');
+        // },
       ),
       builder: (context, player) => Scaffold(
         key: _scaffoldKey,
-        appBar: AppBar(
-          title: const Text(
-            'Youtube Player Flutter',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
         body: ListView(
           children: [
             player,
@@ -173,15 +177,15 @@ class _VideoScreenState extends State<VideoScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      IconButton(
-                        icon: const Icon(Icons.skip_previous),
-                        onPressed: _isPlayerReady
-                            ? () => _controller.load(_ids[
-                        (_ids.indexOf(_controller.metadata.videoId) -
-                            1) %
-                            _ids.length])
-                            : null,
-                      ),
+                      // IconButton(
+                      //   icon: const Icon(Icons.skip_previous),
+                      //   onPressed: _isPlayerReady
+                      //       ? () => _controller.load(_ids[
+                      //   (_ids.indexOf(_controller.metadata.videoId) -
+                      //       1) %
+                      //       _ids.length])
+                      //       : null,
+                      // ),
                       IconButton(
                         icon: Icon(
                           _controller.value.isPlaying
@@ -214,15 +218,15 @@ class _VideoScreenState extends State<VideoScreen> {
                         controller: _controller,
                         color: Colors.blueAccent,
                       ),
-                      IconButton(
-                        icon: const Icon(Icons.skip_next),
-                        onPressed: _isPlayerReady
-                            ? () => _controller.load(_ids[
-                        (_ids.indexOf(_controller.metadata.videoId) +
-                            1) %
-                            _ids.length])
-                            : null,
-                      ),
+                      // IconButton(
+                      //   icon: const Icon(Icons.skip_next),
+                      //   onPressed: _isPlayerReady
+                      //       ? () => _controller.load(_ids[
+                      //   (_ids.indexOf(_controller.metadata.videoId) +
+                      //       1) %
+                      //       _ids.length])
+                      //       : null,
+                      // ),
                     ],
                   ),
                   _space,
