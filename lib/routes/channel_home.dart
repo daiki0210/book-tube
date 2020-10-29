@@ -30,26 +30,14 @@ class _ChannelHome extends State {
       _channel.add(channel);
     }
 
-    setState(() {});
+    setState(() {
+      isLoading = false;
+    });
   }
 
   _buildProfileInfo(int index) {
 
     return ListTile(
-      // margin: EdgeInsets.all(20.0),
-      // padding: EdgeInsets.all(20.0),
-      // height: 100.0,
-      // decoration: BoxDecoration(
-      //   color: Colors.white,
-      //   boxShadow: [
-      //     BoxShadow(
-      //       color: Colors.black12,
-      //       offset: Offset(0, 1),
-      //       blurRadius: 6.0,
-      //     ),
-      //   ],
-      // ),
-
       title: Container(
         child: Row(
           children: <Widget>[
@@ -103,7 +91,7 @@ class _ChannelHome extends State {
       appBar: AppBar(
         title: Text('YouTube Channel'),
       ),
-      body: _channel != null
+      body:isLoading == false
           ? NotificationListener<ScrollNotification>(
         child: ListView.builder(
           itemCount: list.length,
