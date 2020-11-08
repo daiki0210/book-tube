@@ -53,7 +53,7 @@ class Search extends StatelessWidget {
                 child: Card(
                   child: Row(
                     children: [
-                      Padding(padding: EdgeInsets.only(right: 10),
+                      Padding(padding: EdgeInsets.only(right: 15),
                               child: Image.network(bookCoverList[index], height: 140,),
                       ),
                     Column(
