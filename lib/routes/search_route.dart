@@ -12,7 +12,7 @@ import 'package:book_summarizer_app/components/book/who-moved-my-cheese.dart';
 
 class Search extends StatelessWidget {
   // <- (※1)
-  var title = [
+  var bookTitle = [
     '嫌われる勇気',
     '七つの習慣',
     'Think Crealy',
@@ -24,7 +24,7 @@ class Search extends StatelessWidget {
     'FACT FULNESS',
     'チーズはどこへ消えた?'
   ];
-  var bookList = [
+  var bookCoverList = [
     'https://images-na.ssl-images-amazon.com/images/I/71uQVPeynWL.jpg',
     'https://images-na.ssl-images-amazon.com/images/I/71laXZxNTfL.jpg',
     'https://images-na.ssl-images-amazon.com/images/I/51FSTYdEllL._SX339_BO1,204,203,200_.jpg',
@@ -46,21 +46,28 @@ class Search extends StatelessWidget {
          backgroundColor: Colors.white,
       ),
       body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: ListTile(
-                title: Image.network('${bookList[index]}', height: 130),
-                subtitle: Text('${title[index]}',
-                    style: TextStyle(color: Colors.black)),
-                // leading: Text('&listItem'),
-                onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => dartList[index]));
-                },
-              ));
-        },
-        itemCount: title.length,
-      ),
+          itemBuilder: (BuildContext context, int index) {
+            return FlatButton(
+              onPressed: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => dartList[index])),
+                child: Card(
+                  child: Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(right: 10),
+                              child: Image.network(bookCoverList[index], height: 140,),
+                      ),
+                    Column(
+                      children: [
+                        Text(bookTitle[index], textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 18,)),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            );
+          },
+          itemCount: bookTitle.length,
+        ),
     );
   }
 }
