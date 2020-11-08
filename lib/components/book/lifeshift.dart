@@ -1,5 +1,5 @@
+import 'package:book_summarizer_app/components/movie/screens/video_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Life_Shift extends StatelessWidget {
   // <- (※1)
@@ -14,9 +14,9 @@ class Life_Shift extends StatelessWidget {
     'https://i.ytimg.com/vi/Q5PbrO7U3-U/maxresdefault.jpg',
   ];
   var yotubeLinks = [
-    'https://youtu.be/3vhbX2CcXmg',
-    'https://youtu.be/bsKowpYzrio',
-    'https://youtu.be/Q5PbrO7U3-U'
+    '3vhbX2CcXmg',
+    'bsKowpYzrio',
+    'Q5PbrO7U3-U'
   ];
 
   @override
@@ -37,7 +37,12 @@ class Life_Shift extends StatelessWidget {
                   title: Image.network('${thumbnail[index]}'),
                   subtitle: Text('${title[index]}',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  onTap: () => launch('${yotubeLinks[index]}')));
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            VideoScreen(id: yotubeLinks[index]))),
+              ));
         },
         itemCount: title.length,
       ),

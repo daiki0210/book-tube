@@ -1,5 +1,5 @@
+import 'package:book_summarizer_app/components/movie/screens/video_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Hite extends StatelessWidget {
   // <- (※1)
@@ -18,11 +18,11 @@ class Hite extends StatelessWidget {
     'https://i.ytimg.com/vi/I7S5uttrvtE/maxresdefault.jpg'
   ];
   var yotubeLinks = [
-    'https://youtu.be/N-fT1KjtGGA',
-    'https://youtu.be/rZBeETz8YSw',
-    'https://youtu.be/D26oBz1ocaY',
-    'https://youtu.be/JXJ4OVv2n6w',
-    'https://youtu.be/I7S5uttrvtE'
+    'N-fT1KjtGGA',
+    'rZBeETz8YSw',
+    'D26oBz1ocaY',
+    'JXJ4OVv2n6w',
+    'I7S5uttrvtE'
   ];
 
   @override
@@ -40,10 +40,15 @@ class Hite extends StatelessWidget {
                 ),
               ),
               child: ListTile(
-                  title: Image.network('${thumbnail[index]}'),
-                  subtitle: Text('${title[index]}',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  onTap: () => launch('${yotubeLinks[index]}')));
+                title: Image.network('${thumbnail[index]}'),
+                subtitle: Text('${title[index]}',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            VideoScreen(id: yotubeLinks[index]))),
+              ));
         },
         itemCount: title.length,
       ),

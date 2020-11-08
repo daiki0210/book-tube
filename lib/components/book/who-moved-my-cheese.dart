@@ -1,5 +1,5 @@
+import 'package:book_summarizer_app/components/movie/screens/video_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Who_Moved_My_Cheese extends StatelessWidget {
   // <- (※1)
@@ -18,11 +18,11 @@ class Who_Moved_My_Cheese extends StatelessWidget {
     'https://i.ytimg.com/vi/dkI6iO2k-vY/maxresdefault.jpg',
   ];
   var yotubeLinks = [
-    'https://youtu.be/wn9xelq7bLg',
-    'https://youtu.be/Hm4_1ZzPEDs',
-    'https://youtu.be/V7lBa85hBmU',
-    'https://youtu.be/P6Ce9r1cnbg',
-    'https://youtu.be/dkI6iO2k-vY',
+    'wn9xelq7bLg',
+    'Hm4_1ZzPEDs',
+    'V7lBa85hBmU',
+    'P6Ce9r1cnbg',
+    'dkI6iO2k-vY',
   ];
 
   @override
@@ -43,7 +43,12 @@ class Who_Moved_My_Cheese extends StatelessWidget {
                   title: Image.network('${thumbnail[index]}'),
                   subtitle: Text('${title[index]}',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  onTap: () => launch('${yotubeLinks[index]}')));
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            VideoScreen(id: yotubeLinks[index]))),
+              ));
         },
         itemCount: title.length,
       ),

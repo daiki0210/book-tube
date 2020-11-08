@@ -1,5 +1,5 @@
+import 'package:book_summarizer_app/components/movie/screens/video_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatelessWidget {
   // <- (※1)
@@ -20,20 +20,21 @@ class Home extends StatelessWidget {
     'https://i.ytimg.com/vi/NyhGDT26yno/maxresdefault.jpg'
   ];
   var linkImages = [
-    'https://youtu.be/N-fT1KjtGGA',
-    'https://youtu.be/BA9n_JJEcwI',
-    'https://youtu.be/I1IR-XJPw0M',
-    'https://youtu.be/m_oax11xHwk',
-    'https://youtu.be/HaTDjEhdDfc',
-    'https://youtu.be/NyhGDT26yno'
+    'N-fT1KjtGGA&t=29s',
+    'BA9n_JJEcwI',
+    'I1IR-XJPw0M',
+    'm_oax11xHwk',
+    'HaTDjEhdDfc',
+    'NyhGDT26yno'
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BOOKTUBE', textAlign: TextAlign.left, style: TextStyle(color: Colors.black54)),
-         backgroundColor: Colors.white,
+        title: Text('BOOKTUBE',
+            textAlign: TextAlign.left, style: TextStyle(color: Colors.black54)),
+        backgroundColor: Colors.white,
       ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
@@ -47,7 +48,9 @@ class Home extends StatelessWidget {
                   title: Image.network('${thumbnail[index]}'),
                   subtitle: Text('${title[index]}',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  onTap: () => launch('${linkImages[index]}')));
+                  onTap: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => VideoScreen(id: linkImages[index]))),
+                  ));
         },
         itemCount: title.length,
       ),
