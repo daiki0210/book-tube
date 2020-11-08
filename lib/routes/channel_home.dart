@@ -13,7 +13,7 @@ class _ChannelHome extends State {
   bool isLoading = true;
   List<Channel> _channel = [];
   List list = ['UCEixleMT76xDzoiEb9ZA7XA', 'UCcdd3kS52T9Zyo-SWfj86bA', 'UCL4QAojeGy6CJ9R2PwmlmJQ'
-    ,'UCaG7jufgiw4p5mphPPVbqhw','UC2OetCavEd3foO6GkU5NOyQ','UCC4NkFV-L-vVYD5z_Ei5dUA','UCyk6NETMxuVIWQMv3Vh6Epw'];
+    ,'UCaG7jufgiw4p5mphPPVbqhw','UC2OetCavEd3foO6GkU5NOyQ','UCC4NkFV-L-vVYD5z_Ei5dUA'];
 
   @override
   void initState() {
@@ -89,7 +89,8 @@ class _ChannelHome extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('YouTube Channel'),
+        title: Text('BOOKTUBE', textAlign: TextAlign.left, style: TextStyle(color: Colors.black54)),
+         backgroundColor: Colors.white,
       ),
       body:isLoading == false
           ? NotificationListener<ScrollNotification>(

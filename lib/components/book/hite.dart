@@ -17,7 +17,7 @@ class Hite extends StatelessWidget {
     'https://i.ytimg.com/vi/JXJ4OVv2n6w/maxresdefault.jpg',
     'https://i.ytimg.com/vi/I7S5uttrvtE/maxresdefault.jpg'
   ];
-  var linkImages = [
+  var yotubeLinks = [
     'https://youtu.be/N-fT1KjtGGA',
     'https://youtu.be/rZBeETz8YSw',
     'https://youtu.be/D26oBz1ocaY',
@@ -43,7 +43,7 @@ class Hite extends StatelessWidget {
                   title: Image.network('${thumbnail[index]}'),
                   subtitle: Text('${title[index]}',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  onTap: () => launch('${linkImages[index]}')));
+                  onTap: () => launch('${yotubeLinks[index]}')));
         },
         itemCount: title.length,
       ),
