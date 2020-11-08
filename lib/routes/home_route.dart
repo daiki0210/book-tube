@@ -8,28 +8,32 @@ class Home extends StatelessWidget {
     '【12分で解説】エッセンシャル思考①【8割捨てろ】',
     '【9分で解説】ミスをしない人の脳の習慣【ワーキングメモリ鍛える方法】',
     '【5分で図解】直観力 メンタリストDaiGo著',
-    '【7つの習慣①】'
+    '【7つの習慣①】',
+    '【19分で解説】イシューからはじめよ丨仕事が100分の1になる思考法'
   ];
   var thumbnail = [
     'https://i.ytimg.com/vi/N-fT1KjtGGA/maxresdefault.jpg',
     'https://www.enjoylifework.com/wp-content/uploads/4872.jpg',
     'https://i.ytimg.com/vi/I1IR-XJPw0M/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC6rp-ouYhWzqBCNPn_4EWvSqAlmg',
     'https://i.ytimg.com/vi/m_oax11xHwk/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA5h7B0lUrtw2sUnA9O5vUZU4bx7A',
-    'https://i.ytimg.com/vi/HaTDjEhdDfc/maxresdefault.jpg'
+    'https://i.ytimg.com/vi/HaTDjEhdDfc/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/NyhGDT26yno/maxresdefault.jpg'
   ];
   var linkImages = [
     'https://youtu.be/N-fT1KjtGGA',
     'https://youtu.be/BA9n_JJEcwI',
     'https://youtu.be/I1IR-XJPw0M',
     'https://youtu.be/m_oax11xHwk',
-    'https://youtu.be/HaTDjEhdDfc'
+    'https://youtu.be/HaTDjEhdDfc',
+    'https://youtu.be/NyhGDT26yno'
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('動画'),
+        title: Text('BOOKTUBE', textAlign: TextAlign.left, style: TextStyle(color: Colors.black54)),
+         backgroundColor: Colors.white,
       ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
