@@ -93,7 +93,6 @@ class _ChannelHome extends State {
       ),
       body:isLoading == false
           ? NotificationListener<ScrollNotification>(
-        child: Card(
             child: ListView.builder(
             itemCount: list.length,
             itemBuilder: (BuildContext context, int index) {
@@ -104,7 +103,6 @@ class _ChannelHome extends State {
               }
             },
           ),
-        ),
       )
           : Center(
         child: CircularProgressIndicator(
