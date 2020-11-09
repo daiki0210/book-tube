@@ -12,8 +12,7 @@ class ChannelHome extends StatefulWidget{
 class _ChannelHome extends State {
   bool isLoading = true;
   List<Channel> _channel = [];
-  List list = ['UCEixleMT76xDzoiEb9ZA7XA', 'UCcdd3kS52T9Zyo-SWfj86bA', 'UCL4QAojeGy6CJ9R2PwmlmJQ'
-    ,'UCaG7jufgiw4p5mphPPVbqhw','UC2OetCavEd3foO6GkU5NOyQ','UCC4NkFV-L-vVYD5z_Ei5dUA'];
+  List list = ['UCaG7jufgiw4p5mphPPVbqhw','UCFo4kqllbcQ4nV83WCyraiw','UCEixleMT76xDzoiEb9ZA7XA', 'UCcdd3kS52T9Zyo-SWfj86bA','UCL4QAojeGy6CJ9R2PwmlmJQ','UCTp9YSJ-eDvZjEC5sC3kBHw','UC2OetCavEd3foO6GkU5NOyQ','UCC4NkFV-L-vVYD5z_Ei5dUA','UCp2xtXwztK9RvgmW8adtOZg','UCIHGIa2JlbijuVpVmFHH83w','UCS9wlXLeVxTqXgPWU3kn7EQ', 'UCQWnrMPj250V__yACW_m_rA', 'UCi3WPfWKrr9hdskV8eQfj9g'];
 
   @override
   void initState() {
@@ -94,16 +93,16 @@ class _ChannelHome extends State {
       ),
       body:isLoading == false
           ? NotificationListener<ScrollNotification>(
-        child: ListView.builder(
-          itemCount: list.length,
-          itemBuilder: (BuildContext context, int index) {
-            if (index < list.length) {
-              return _buildProfileInfo(index);
-            } else{
-              return Text("error");
-            }
-          },
-        ),
+            child: ListView.builder(
+            itemCount: list.length,
+            itemBuilder: (BuildContext context, int index) {
+              if (index < list.length) {
+                return _buildProfileInfo(index);
+              } else{
+                return Text("error");
+              }
+            },
+          ),
       )
           : Center(
         child: CircularProgressIndicator(

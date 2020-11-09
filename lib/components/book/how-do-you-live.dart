@@ -1,5 +1,5 @@
+import 'package:book_summarizer_app/components/movie/screens/video_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class How_Do_You_Live extends StatelessWidget {
   // <- (※1)
@@ -23,13 +23,13 @@ class How_Do_You_Live extends StatelessWidget {
 
   ];
   var yotubeLinks = [
-    'https://youtu.be/0OntLo9AM2w',
-    'https://youtu.be/NukUvUGMcCI',
-    'https://youtu.be/lp1VKcEnpO0',
-    'https://youtu.be/sOV5kSAbRzo',
-    'https://youtu.be/nrBL-FNkEcg',
-    'https://youtu.be/JZqwSBmxDT4',
-    'https://youtu.be/kbqTWv3HpNs',
+    '0OntLo9AM2w',
+    'NukUvUGMcCI',
+    'lp1VKcEnpO0',
+    'sOV5kSAbRzo',
+    'nrBL-FNkEcg',
+    'JZqwSBmxDT4',
+    'kbqTWv3HpNs',
   ];
 
   @override
@@ -50,7 +50,12 @@ class How_Do_You_Live extends StatelessWidget {
                   title: Image.network('${thumbnail[index]}'),
                   subtitle: Text('${title[index]}',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  onTap: () => launch('${yotubeLinks[index]}')));
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            VideoScreen(id: yotubeLinks[index]))),
+              ));
         },
         itemCount: title.length,
       ),

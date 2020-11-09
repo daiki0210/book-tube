@@ -30,18 +30,6 @@ class _VideoScreenState extends State<VideoScreen> {
   bool _muted = false;
   bool _isPlayerReady = false;
 
-  // final List<String> _ids = [
-  //   'lBN-vIP-dVU',
-  //   'ueY7y6TYBbs',
-  //   'IT6zNKLrT0Q',
-  //   '3b73xVBc',
-  //   '3b73xVBc',
-  //   '3b73xVBc',
-  //   '3b73xVBc',
-  //   '3b73xVBc',
-  //   '3b73xVBc',
-  // ];
-
   @override
   void initState() {
     super.initState();
@@ -137,11 +125,6 @@ class _VideoScreenState extends State<VideoScreen> {
         onReady: () {
           _isPlayerReady = true;
         },
-        // onEnded: (data) {
-        //   _controller
-        //       .load(_ids[(_ids.indexOf(data.videoId) + 1) % _ids.length]);
-        //   _showSnackBar('Next Video Started!');
-        // },
       ),
       builder: (context, player) => Scaffold(
         key: _scaffoldKey,

@@ -1,5 +1,5 @@
+import 'package:book_summarizer_app/components/movie/screens/video_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class The_7_Hobits extends StatelessWidget {
   // <- (※1)
@@ -24,14 +24,14 @@ class The_7_Hobits extends StatelessWidget {
     'https://i.ytimg.com/vi/OXK8WF7uF_Y/maxresdefault.jpg'
   ];
   var yotubeLinks = [
-    'https://youtu.be/21aJYzS_Sxc',
-    'https://youtu.be/HaTDjEhdDfc',
-    'https://youtu.be/EE-yUv66eVo',
-    'https://youtu.be/PIi1k3DpgCw',
-    'https://youtu.be/MbIGisQzw4c',
-    'https://youtu.be/vkV1snsAQt8',
-    'https://youtu.be/ReJAtOg2aAI',
-    'https://youtu.be/OXK8WF7uF_Y'
+    '21aJYzS_Sxc',
+    'HaTDjEhdDfc',
+    'EE-yUv66eVo',
+    'PIi1k3DpgCw',
+    'MbIGisQzw4c',
+    'vkV1snsAQt8',
+    'ReJAtOg2aAI',
+    'OXK8WF7uF_Y'
   ];
 
   @override
@@ -52,7 +52,12 @@ class The_7_Hobits extends StatelessWidget {
                   title: Image.network('${thumbnail[index]}'),
                   subtitle: Text('${title[index]}',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  onTap: () => launch('${yotubeLinks[index]}')));
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            VideoScreen(id: yotubeLinks[index]))),
+              ));
         },
         itemCount: title.length,
       ),
