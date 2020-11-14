@@ -1,6 +1,8 @@
+import 'package:book_summarizer_app/components/movie/services/api_service.dart';
 import 'package:book_summarizer_app/routes/channel_home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'components/netflix/screen/home_screen.dart';
 import 'routes/home_route.dart';
 import 'routes/search_route.dart';
 
@@ -20,6 +22,8 @@ class _RootWidgetState extends State<RootWidget> {
     Icons.home,
     Icons.search,
     Icons.star_half,
+    // Icons.ten_k,
+    Icons.video_collection,
   ];
 
   // アイコン文字列
@@ -27,12 +31,16 @@ class _RootWidgetState extends State<RootWidget> {
     'ホーム',
     '本で絞る',
     'チャンネル',
+    // 'test'
+    'netflix'
   ];
 
   var _routes = [
     Home(),
     Search(),
     ChannelHome(),
+    // VideosPage(),
+    NetflixHome(),
   ];
 
   @override
