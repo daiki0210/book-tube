@@ -28,6 +28,8 @@ class Home extends StatelessWidget {
     'NyhGDT26yno'
   ];
 
+  bool _isLoading = false;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +40,7 @@ class Home extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
+          // print(Image.network());
           return Container(
               decoration: BoxDecoration(
                 border: Border(
@@ -45,7 +48,13 @@ class Home extends StatelessWidget {
                 ),
               ),
               child: ListTile(
-                  title: Image.network('${thumbnail[index]}'),
+                  title: Image.network('${thumbnail[index]}',
+                  loadingBuilder:(BuildContext context, Widget child,ImageChunkEvent loadingProgress) {
+                  if (loadingProgress == null) return child;
+                         return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                  },),
                   subtitle: Text('${title[index]}',
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   onTap: () => Navigator.push(
